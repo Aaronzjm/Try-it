@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="description" content="">
+	<meta name="keywords" content="">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no,viewport-fit=contain">
+	<title>zjm-UI</title>
+	<script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+	<script type="text/javascript" src="js/zjmui-phone.js"></script>
+	<script type="text/javascript" src="js/vue.js"></script>
+	<link rel="stylesheet" href="css/zjmui.css">
+	<link rel="stylesheet" href="dist/css/zjm.css">
+	<style>
+		.first,
+		.second,
+		.third{
+			border:1px solid #700;
+		}
+	</style>
+</head>
+<body>
+	<header id="zj-header">
+		<div class="zjm-g zjm-container zjm-cf">
+			<ul class="zj-nav-items">
+				<li class="zjm-u-sm-6">zjmUI（目前处于开发阶段）</li>
+				<li class="zjm-u-sm-3">CSS</li>
+				<li class="zjm-u-sm-3">JS</li>
+			</ul>
+		</div>
+	</header>
+	<div id='zjVue' class="zjm-container zjm-cf zj-body">
+		<div class="zjm-u-md-3 zj-nav">
+			<ul class="zjm-tabs-nav">
+				<li class="zjm-active" data-zjm-hidden='zj-h-grid'>网格布局(grid)</li>
+				<li data-zjm-hidden='zj-h-other'>辅助类(other)</li>
+				<li data-zjm-hidden='zj-h-sidebar'>侧边栏(sidebar)</li>
+				<li data-zjm-hidden='zj-h-mescroll'>滚动加载(mescroll)</li>
+				<li data-zjm-hidden='zj-h-tabs'>选择项(tabs)</li>
+				<li data-zjm-hidden='zj-h-flod'>折叠面板(flod)</li>
+			</ul>
+		</div>
+		<div class="zjm-u-md-9 zjm-tabs-body">
+			<div class="zj-h-grid zjm-isshow">
+				<h1>网格布局（grid）</h1>
+				<p>zjm UI使用了12列网格响应系统，使用需在外围添加<code>class="zjm-g"</code>class,然后在内列上添加<code>zjm-u-[sm|md]</code>class。</p>
+				<h2>基本使用</h2>
+				<div class="zj-example">
+					<div class="zjm-g zjm-cf zj-zjm-g">
+						<div class="zjm-u-sm-4">4</div>
+						<div class="zjm-u-sm-8">8</div>
+					</div>
+				</div>
+				<div class="zj-code"><pre>
+					<code>{{grid}}</code>
+				</pre></div>
+			</div>
+			<div class="zj-h-other">
+				<h1>辅助类(other)</h1>
+				<h2>基本使用</h2>
+				<h3>布局相关</h3>
+				<p><code>.zjm-container</code>：限制页面最大宽度为1000px；</p>
+				<h3>浮动（Float）</h3>
+				<p><code>.zjm-cf</code>:清楚浮动</p>
+			</div>
+			<div class="zj-h-sidebar">
+				<h1>侧边栏(sidebar)</h1>
+				<h2>1. 使用案例</h2>
+				<a href="">点击显示侧边栏（默认）</a>
+				<p>在点击按钮处出添加<code>data-zjm-sidebar</code>，侧边栏添加<code>class="zjm-left-nav"</code></p>
+				<p>需添加要推出部分的class到<code>data-zjm-sidebar</code>中pushClass，如</p>
+				<div class="zj-example">
+					<a href="">点击显示侧边栏（push）</a>
+				</div>
+				<div class="zj-code"><pre>
+					<code>{{sidebar}}</code>
+				</pre></div>
+			</div>
+			<div class="zj-h-mescroll">
+				<h1>滚动加载(mescroll)</h1>
+				<h2>基本使用</h2>
+				<h3>1. 使用案例</h3>
+				<p>引用了mescroll组件，使用前需按照mescroll官网需求引入对应css和js文件使用</p>
+			</div>
+			<div class="zj-h-tabs">
+				<h1>选择项(tabs)</h1>
+				<h2>基本使用</h2>
+				<h3>1. 使用案例</h3>
+				<p>在导航栏添加<code>class="zjm-tabs-nav"</code>,在每个选项卡添加<code>data-zjm-hidden="first"</code>,切换内容的父类中添加<code>class="zjm-tabs-body"</code>，在每个内容添加对应选项卡中的class，如<code>class="first"</code></p>
+				<div class="zj-example">
+					<ul class="zjm-tabs-nav zjm-cf">
+						<li class="zjm-u-sm-4 zjm-active" data-zjm-hidden="first">选项1</li>
+						<li class="zjm-u-sm-4" data-zjm-hidden="second">选项2</li>
+						<li class="zjm-u-sm-4" data-zjm-hidden="third">选项3</li>
+					</ul>
+					<div class="zjm-tabs-body">
+						<div class="first zjm-isshow">内容1</div>
+						<div class="second">内容2</div>
+						<div class="third">内容3</div>
+					</div>
+				</div>
+				<div class="zj-code"><pre>
+					<code>{{tabs}}</code>
+				</pre></div>
+			</div>
+			<div class="zj-h-flod">
+				<h1>折叠面板(flod)</h1>
+				<h2>基本使用</h2>
+				<h3>1. 使用案例</h3>
+				<p>在导航栏添加<code>class="zjm-tabs-nav"</code>,在每个选项卡添加<code>data-zjm-hidden="first"</code>,切换内容的父类中添加<code>class="zjm-tabs-body"</code>，在每个内容添加对应选项卡中的class，如<code>class="first"</code></p>
+				<div class="zj-code"><pre>
+					<code>{{tabs}}</code>
+				</pre></div>
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript">
+		var app = new Vue({ 
+			el: '#zjVue',
+			data: { 
+				grid: '\n<div class="zjm-g zjm-cf zj-zjm-g">\n    <div class="zjm-u-sm-4">4</div>\n    <div class="zjm-u-sm-8">8</div>\n</div>',
+				tabs: '\n<ul class="zjm-tabs-nav zjm-cf">\n    <li class="zjm-u-sm-4" data-zjm-hidden="first">选项1</li>\n    <li class="zjm-u-sm-4" data-zjm-hidden="second">选项2</li>\n    <li class="zjm-u-sm-4" data-zjm-hidden="third">选项3</li>\n</ul>\n<div class="zjm-tabs-body">\n    <div class="first zjm-isshow">内容1</div>\n    <div class="second">内容2</div>\n    <div class="third">内容3</div>\n</div>',
+				sidebar: '\n $(".nav").sidebar({\n    effect: "push",\n    pushClass: ["mescroll", "header"]\n});'
+			}
+		})
+		$(this).tabs();
+	</script>
+</body>
+</html>

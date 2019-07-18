@@ -1,0 +1,44 @@
+body{
+	font-size: 0.875rem;
+}
+#zj-header{
+	background-color: #0e90d2;
+	color: white;
+}
+#zj-header li{
+	display: block;
+	line-height: 1.25rem;
+	padding: .6rem;
+	text-align: center;
+}
+.zj-body{
+	padding: 30px 0;
+}
+.zj-body li:hover{
+	background: #f5f5f5;
+    color: #333;
+}
+.zj-nav li{
+	color:#777;
+	padding:.3rem;
+}
+.zj-example:before{
+	content: 'demo';
+	display: block;
+    color: #bbb;
+    text-transform: uppercase;
+    margin: 0 -15px 15px;
+    padding: 4px 10px;
+    font-size: 12px;
+}
+.zj-example{
+	border: 1px solid #eee;
+	padding: 0 15px 15px 15px;
+}
+.zj-zjm-g>[class*=zjm-u-]{
+	border:1px solid red;
+}
+.zj-code{
+	background-color: #f8f8f8;
+    border: 1px solid #dedede;
+}
